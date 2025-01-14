@@ -33,5 +33,5 @@ end
 
 # Take user input
 puts "Enter an IP address:"
-input_ip = gets.chomp
+input_ip = gets.chomp.strip
 puts "The class of the IP address #{input_ip} is: #{findClassFromIP(input_ip)}"

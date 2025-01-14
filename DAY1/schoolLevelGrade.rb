@@ -1,5 +1,7 @@
 def printLevelFromGrade(input_grade)
-  if input_grade >= 1 && input_grade <= 5
+  if input_grade <= 0
+    puts "Invalid Grade , Please Enter Valid Grade"
+  elsif input_grade >= 1 && input_grade <= 5
     puts "Elementary Level Student"
   elsif input_grade >= 6 && input_grade <= 8
     puts "Middle School Student"
