@@ -58,7 +58,7 @@ def initialize_game(level)
   end
 
   # End game message
-  puts "GAME OVER! The correct answer was '#{word}'."  
+  puts "\n\n\nGAME OVER! The correct answer was '#{word}'.\n\n"  
   false
 end
 
@@ -77,7 +77,7 @@ end
 
 def already_guessed?(guessed_letters, guess)
   if guessed_letters.include?(guess)
-    puts "You have already guessed '#{guess}'. Try again."
+    puts "\nYou have already guessed '#{guess}'. Try again."
     return true
   end
   false
