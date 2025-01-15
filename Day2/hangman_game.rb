@@ -54,6 +54,7 @@ def initialize_game(level)
 
     # Show used letters
     puts "You have used these letters: #{guessed_letters.join(', ')}"  
+    puts "You have remaining chances : #{max_attempts-wrong_guesses}"
   end
 
   # End game message
