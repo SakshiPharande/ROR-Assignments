@@ -1,7 +1,6 @@
 # Load dictionaries
 load './dictionaries.rb'
 
-
 # game start with level
 def start_game(levels)
   current_level = 0
@@ -9,7 +8,7 @@ def start_game(levels)
   while current_level < levels.length
     puts "\n *********** Starting Level #{current_level + 1} **************"
     
-    if initialize_game(levels[current_level])
+    if play(levels[current_level])
        # Move to next level if successful
       current_level += 1             
     else
@@ -21,11 +20,11 @@ def start_game(levels)
   if current_level == levels.length
     # Completion message
     puts "\nCongratulations! You've completed all levels!  WINNER !!!"   
-  endx
+  end
 end
 
 
-def initialize_game(level)
+def play(level)
   word, hint = level.to_a.sample
   guessed_letters = []
   wrong_guesses = 0
