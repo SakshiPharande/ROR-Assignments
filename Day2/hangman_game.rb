@@ -21,7 +21,7 @@ def start_game(levels)
   if current_level == levels.length
     # Completion message
     puts "\nCongratulations! You've completed all levels!  WINNER !!!"   
-  end
+  endx
 end
 
 
