@@ -25,18 +25,14 @@ end
 
 
 def play(level)
-  word, hint = level.to_a.sample
-  guessed_letters = []
-  wrong_guesses = 0
-  max_attempts = 5
+  word, hint, guessed_letters, wrong_guesses, max_attempts = initialize_game(level)
 
   display_hint(hint, word.length)
 
   while wrong_guesses < max_attempts
     guess = get_user_guess()
 
-    # Exit game if user chooses to quit
-    return false if guess == 'exit'  
+    return handle_exit(guess) if guess == 'exit'  
 
     next if already_guessed?(guessed_letters, guess)
 
@@ -46,20 +42,43 @@ def play(level)
     display_word(word, guessed_letters)
 
     if all_letters_guessed?(word, guessed_letters)
-      puts "Congratulations! You've guessed the word '#{word}'. Moving to the next level... \n\n"
-       # Move to next level
+      handle_success(word)
       return true 
     end
 
-    # Show used letters
-    puts "You have used these letters: #{guessed_letters.join(', ')}"  
-    puts "You have remaining chances : #{max_attempts-wrong_guesses}"
+    display_status(guessed_letters, wrong_guesses, max_attempts)
   end
 
-  # End game message
-  puts "\n\n\nGAME OVER! The correct answer was '#{word}'.\n\n"  
+  handle_game_over(word)
   false
 end
+
+def initialize_game(level)
+  word, hint = level.to_a.sample
+  guessed_letters = []
+  wrong_guesses = 0
+  max_attempts = 5
+  [word, hint, guessed_letters, wrong_guesses, max_attempts]
+end
+
+def handle_exit(guess)
+  puts "Exiting the game. Thank you for playing!"
+  false
+end
+
+def handle_success(word)
+  puts "Congratulations! You've guessed the word '#{word}'. Moving to the next level... \n\n"
+end
+
+def display_status(guessed_letters, wrong_guesses, max_attempts)
+  puts "You have used these letters: #{guessed_letters.join(', ')}"  
+  puts "You have remaining chances: #{max_attempts - wrong_guesses}"
+end
+
+def handle_game_over(word)
+  puts "\n\n\nGAME OVER! The correct answer was '#{word}'.\n\n"
+end
+
 
 
 def display_hint(hint, word_length)
