@@ -9,7 +9,7 @@ module CountryModule
     country[:development_status] == 'developing' && country[:gdp] < gdp_threshold
   end
 
-  def can_get_seat_un(country)
+  def can_get_seat_in_un(country)
     permanent_members = ['China', 'France', 'Russia', 'United Kingdom', 'United States']
     if permanent_members.include?(country[:name])
       puts "#{country[:name]} is a permanent member of the UN Security Council."
