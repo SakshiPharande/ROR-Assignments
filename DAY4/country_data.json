@@ -1,0 +1,44 @@
+{
+  "countries": [
+    {
+      "name": "India",
+      "population": 1393409038,
+      "gdp": 2875.14,
+      "states": ["Maharashtra", "Uttar Pradesh", "Bihar"],
+      "army_strength": 1390000,
+      "development_status": "developing"
+    },
+    {
+      "name": "Germany",
+      "population": 83783942,
+      "gdp": 3845.63,
+      "states": ["Bavaria", "Berlin", "Hesse"],
+      "army_strength": 184000,
+      "development_status": "developed"
+    },
+    {
+      "name": "United States",
+      "population": 331002651,
+      "gdp": 21137.0,
+      "states": ["California", "Texas", "Florida"],
+      "army_strength": 1400000,
+      "development_status": "developed"
+    },
+    {
+      "name": "Brazil",
+      "population": 212559417,
+      "gdp": 1846.73,
+      "states": ["São Paulo", "Rio de Janeiro", "Bahia"],
+      "army_strength": 334500,
+      "development_status": "developing"
+    },
+    {
+      "name": "Nigeria",
+      "population": 206139589,
+      "gdp": 448.12,
+      "states": ["Lagos", "Kano", "Rivers"],
+      "army_strength": 223000,
+      "development_status": "developing"
+    }
+  ]
+}
