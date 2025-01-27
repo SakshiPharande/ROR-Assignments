@@ -94,24 +94,19 @@ class Level
 
   # Check if the letter has already been guessed
   def already_guessed?(guess)
-    if guessed_letters.include?(guess)
-      puts "\nYou have already guessed '#{guess}'. Try again."
-      true
-    else
-      false
+    unless guessed_letters.include?(guess)
+      return false
     end
+    puts "\nYou have already guessed '#{guess}'. Try again."
+    true
   end
+
 
   # Check if the guess is correct
   def check_guess(guess)
-    if word.include?(guess)
-      puts "Correct guess!"
-      0
-    else
-      puts "Wrong guess!"
-      1
-    end
+    word.include?(guess) ? (puts "Correct guess!"; 0) : (puts "Wrong guess!"; 1)
   end
+
 
   # Display the current state of the word
   def display_word
